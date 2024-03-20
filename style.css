@@ -149,6 +149,17 @@
     align-items: center; /* Alinha os itens verticalmente no centro */
     gap: 100px; /* Espaço entre os itens */
 }
+.first-row-apresentation button{
+    background-color: #1D1D1D;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 30px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    margin-top: 25px;
+}
 /* Estilos para a div .second-row-course-apresentation */
 .second-row-course-apresentation{
     display: flex;
@@ -178,6 +189,40 @@
     width: 300px;
     height: 400px;
     text-align: center;
+    border-radius: 50px;
+}
+.course-card img{
+    width: 200px;
+    height: 190px;
+}
+.ime-card img{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 150px;
+    height: 150px;
+}
+.card-content{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin-left: 10px;
+}
+.card-content p{
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+.card-content span{
+    font-weight: 50px;
+    font-size: 14px;
+}
+.card-content button{
+    background-color: #1D1D1D;
+    color: white;
+    border: none;
+    padding: 5px;
+    width: 80px;
+    border-radius: 20px;  
+    margin-top: 50px;
 }
 
 /* Estilos para o conteúdo de texto */
