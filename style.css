@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+/* Reset CSS */
+*{
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* End CSS Reset */
+.conteiner{
+    display: grid;
+    grid-template-areas: 
+    'header'
+    'main'
+    'footer';
+    grid-template-columns: auto;
+    grid-template-rows: 0.1fr auto auto;
+    /* min-width: 100vw; */
+    min-height: 100vh;
+    /* min-width: 100vw; */
+    background-color: #090545;
+    font-family: "Manrope", sans-serif;
+    /* font-optical-sizing: auto;
+    font-style: normal; */
+}
+.navbar-ocult{
+    display: none;
+}
+/* Estilos para o header */
+.header {
+    grid-area: header;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    background-color: #1D1D1D;
+}
+
+/* Estilos para os links */
+.header-nav-desktop a {
+    text-decoration: none; /* Remove a linha dos links */
+    color: white; /* Define a cor do texto dos links */
+    margin-right: 10px; /* Adiciona um pouco de espaço entre os links */
+}
+
+/* Remove a linha dos links */
+.header-nav-desktop a:hover {
+    text-decoration: none;
+}
+
+/* Dropdown Link */
+.dropdown-link {
+    text-decoration: none;
+    padding: 16px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #1D1D1D;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: lightslategray}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Estilos para os botões de Login e Cadastro */
+.login-btn, .signup-btn {
+    background-color: #142D90; /* Cor de fundo */
+    color: white; /* Cor do texto */
+    padding: 10px 20px; /* Espaçamento interno */
+    margin-left: 10px; /* Espaçamento externo à esquerda */
+    border: none; /* Remove a borda */
+    cursor: pointer; /* Muda o cursor para um ponteiro ao passar o mouse */
+    text-align: center; /* Centraliza o texto */
+    text-decoration: none; /* Remove a linha dos links */
+    display: inline-block; /* Permite que os botões sejam alinhados horizontalmente */
+    font-size: 16px; /* Tamanho da fonte */
+    margin-top: 10px; /* Espaçamento externo no topo */
+    border-radius: 20px;
+}
+.signup-btn{
+    background-color: white;
+    color: black;
+}
+
+/* Estilo para o botão de Login quando passado o mouse */
+.login-btn:hover {
+    background-color: lightseagreen;
+}
+
+/* Estilo para o botão de Cadastro quando passado o mouse */
+.signup-btn:hover {
+    background-color: lightgray;
+}
+/* END HEADER CSS STYLE */
+/* ======================================================================================== */
+
+/* ======================================================================================== */
+
+/* Estilos para a .main */
+.main {
+    grid-area: main;
+    display: flex; /* Aplica Flexbox */
+    flex-direction: column; /* Alinha os itens verticalmente */
+    align-items: center; /* Centraliza os itens horizontalmente */
+    justify-content: center; /* Centraliza os itens verticalmente */
+    max-width: 1200px; /* Define a largura máxima */
+    margin-left: auto; /* Aplica margem automática à esquerda */
+    margin-right: auto; /* Aplica margem automática à direita */
+    padding: 20px; /* Adiciona um pouco de espaço interno */
+}
+
+/* Estilos para as divs dentro da .main */
+.main > div {
+    max-width: 80%; /* Reduz a largura das divs internas */
+    width: 100%; /* Garante que a div ocupe toda a largura disponível */
+}
+/* Estilos para a div .first-row-apresentation */
+.first-row-apresentation {
+    display: flex;
+    justify-content: space-between; /* Alinha os itens horizontalmente, com espaço entre eles */
+    align-items: center; /* Alinha os itens verticalmente no centro */
+    gap: 100px; /* Espaço entre os itens */
+}
+/* Estilos para a div .second-row-course-apresentation */
+.second-row-course-apresentation{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+.second-row-course-apresentation h1{
+    font-weight: 400px;
+    font-size: 28px;
+}
+/* Estilos para a div .second-row-apresentation */
+.second-row-apresentation{
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+}
+/* Estilos para os cards dos cursos */
+.course-card{
+    background-color: white;
+    color: black;
+    margin: auto;
+    padding: auto;
+    width: 300px;
+    height: 400px;
+    text-align: center;
+}
+
+/* Estilos para o conteúdo de texto */
+.text-content {
+    display: flex;
+    flex-direction: column; /* Altera a direção do flex para coluna */
+    align-items: flex-start; /* Alinha os itens verticalmente no início */
+    color: white;
+}
+.text-content h1{
+    font-weight: 400px;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+/* Estilos para o conteúdo da imagem */
+.image-content img{
+    border-radius: 20%;
+    /* Estilos específicos para a imagem, se necessário */
+}
+
+/* Estilos para o ícone de lista */
+.menu-toggle {
+    display: none; /* Oculta o ícone de lista por padrão */
+    background-color: transparent;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: white;
+}
+.footer{
+    grid-area: footer;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px; /* Adiciona um pouco de espaço ao redor */
+    background-color: #1D1D1D;
+}
+.footer .icons-footer{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    gap: 50px;
+}
+
