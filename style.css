@@ -16,7 +16,7 @@
     'main'
     'footer';
     grid-template-columns: auto;
-    grid-template-rows: 0.1fr auto auto;
+    grid-template-rows: 0.1fr auto 0.2fr;
     /* min-width: 100vw; */
     min-height: 100vh;
     /* min-width: 100vw; */
@@ -107,6 +107,9 @@
 }
 .signup-btn{
     background-color: white;
+}
+.signup-btn a{
+    text-decoration: none;
     color: black;
 }
 
@@ -187,19 +190,19 @@
     margin: auto;
     padding: auto;
     width: 300px;
-    height: 400px;
+    height: 380px;
     text-align: center;
-    border-radius: 50px;
+    border-radius: 20px;
 }
 .course-card img{
     width: 200px;
     height: 190px;
 }
 .ime-card img{
-    padding-top: 20px;
-    padding-bottom: 20px;
-    width: 150px;
-    height: 150px;
+    padding-top: 50px;
+    padding-bottom: 40px;
+    width: 100px;
+    height: 100px;
 }
 .card-content{
     display: flex;
@@ -208,6 +211,7 @@
     margin-left: 10px;
 }
 .card-content p{
+    font-weight: bold;
     font-size: 20px;
     margin-bottom: 10px;
 }
@@ -223,8 +227,12 @@
     width: 80px;
     border-radius: 20px;  
     margin-top: 50px;
+    cursor: pointer;
 }
-
+.card-content button a{
+    text-decoration: none;
+    color: white;
+}
 /* Estilos para o conteúdo de texto */
 .text-content {
     display: flex;
@@ -268,3 +276,54 @@
     gap: 50px;
 }
 
+/* ====================================== *
+/* LOGIN PAGE CSS STYLE */
+/* ====================================== */
+.login-page {
+    width: 400px;
+    padding: 20px;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 1);
+    background-color: #1D1D1D;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-form input {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.login-form button {
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.login-page .links {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+} 
+.login-page .links a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.login-page .links a:hover {
+    text-decoration: underline;
+}
+.login-page h2{
+    color: white;
+    font-weight: bold;
+    font-size: 26px;
+    padding: 10px;
+}

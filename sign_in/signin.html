@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <title>Sapiens Education</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+    <div class="conteiner">
+        <header class="header">
+            <div>
+                <a href="../index.html"><img src="../imgs/logo-sapiens-education.png" alt="logo-sapiens-education" width="80px" height="80px"></a>
+            </div>
+            <div class="header-nav-desktop">
+                <a href="#">Sobre nós</a>
+                <div class="dropdown">
+                    <a href="#" class="dropdown-link">Cursos <i class="bi bi-caret-down-fill"></i></a>
+                    <div class="dropdown-content">
+                        <a href="#">ITA</a>
+                        <a href="#">ESA</a>
+                        <a href="#">IME</a>
+                    </div>
+                </div>
+                <a href="#">Professores</a>
+                <!-- Botões de Login e Cadastro -->
+                <button class="login-btn"><a href="sign_in/signin.html">Entrar</a></button>
+                <button class="signup-btn"><a href="sign_in/createacc.html">Cadastrar</a></button>
+            </div>
+            <span class="menu-toggle"><i class="bi bi-list"></i></span>
+        </header>
+        <main class="main">
+            <div class="login-page">
+                <form class="login-form">
+                    <h2>Login</h2>
+                    <input type="text" placeholder="CPF" required>
+                    <input type="password" placeholder="Senha" required>
+                    <button type="submit">Entrar</button>
+                    <div class="links">
+                        <a href="#">Esqueceu a senha?</a>
+                        <a href="#">Fazer cadastro</a>
+                    </div>
+                </form>
+            </div>
+        </main>
+        <footer class="footer">  
+            <div class="footer-content">
+                <p>&copy; Sapiens Education. Todos os direitos reservados</p>
+            </div>
+            <div class="icons-footer">
+                <i class="bi bi-facebook"></i>
+                <i class="bi bi-whatsapp"></i>
+                <i class="bi bi-twitter"></i>
+            </div>
+        </footer>
+    </div>
+    <script src="../script.js"></script>
+</body>
+</html>
