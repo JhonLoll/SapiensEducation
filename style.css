@@ -94,7 +94,8 @@
 .login-btn, .signup-btn {
     background-color: #142D90; /* Cor de fundo */
     color: white; /* Cor do texto */
-    padding: 10px 20px; /* Espaçamento interno */
+    padding: 10px 15px; /* Espaçamento interno */
+    padding-left: 24px;
     margin-left: 10px; /* Espaçamento externo à esquerda */
     border: none; /* Remove a borda */
     cursor: pointer; /* Muda o cursor para um ponteiro ao passar o mouse */
@@ -199,10 +200,10 @@
     height: 190px;
 }
 .ime-card img{
-    padding-top: 50px;
-    padding-bottom: 40px;
+    padding-top: 40px;
+    padding-bottom: 30px;
     width: 100px;
-    height: 100px;
+    height: 120px;
 }
 .card-content{
     display: flex;
@@ -280,7 +281,7 @@
 /* LOGIN PAGE CSS STYLE */
 /* ====================================== */
 .login-page {
-    width: 400px;
+    width: 800px;
     padding: 20px;
     border: none;
     border-radius: 15px;
@@ -326,4 +327,179 @@
     font-weight: bold;
     font-size: 26px;
     padding: 10px;
+}
+/* ====================================== *
+/* CREATE ACCOUNT PAGE CSS STYLE */
+/* ====================================== */
+/* Estilos para a página de criação de conta */
+.createacc-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background-color: #1D1D1D;
+    color: white;
+    border-radius: 25px;
+}
+
+/* Estilos para o formulário */
+.createacc-page form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 400px;
+}
+
+/* Estilos para os grupos de formulário */
+.createacc-page .form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+/* Estilos para os rótulos dos campos do formulário */
+.createacc-page .form-group label {
+    margin-bottom: 5px;
+}
+
+/* Estilos para os campos de entrada do formulário */
+.createacc-page .form-group input {
+    padding: 10px;
+    width: 350px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Estilos para o botão de envio do formulário */
+.createacc-page form button {
+    padding: 10px 20px;
+    background-color: #142D90;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+/* Estilo para o botão de envio do formulário quando passado o mouse */
+.createacc-page form button:hover {
+    background-color: #007bff;
+}
+/* Estilos para o link de login */
+.createacc-page p a {
+    color: #142D90; /* Cor do link */
+    text-decoration: none; /* Remove a linha sublinhada */
+}
+.createacc-page p{
+    margin-top: 15px;
+}
+.createacc-page h2{
+    font-weight: bold;
+    font-size: 24px;
+}
+/* Estilo para o link de login quando passado o mouse */
+.createacc-page p a:hover {
+    text-decoration: underline; /* Adiciona uma linha sublinhada ao passar o mouse */
+}
+/* ====================================== *
+/* SUBSCRIPTION PAGE CSS STYLE */
+/* ====================================== */
+.subscription-page {
+    display: flex;
+    justify-content: space-around; /* Distribui os cards uniformemente */
+    /* flex-wrap: wrap; Permite que os cards sejam dispostos em várias linhas */
+    padding: 20px;
+}
+/* Estilos para a imagem dentro dos cards */
+.subscription-card img {
+    width: 80%;
+    height: 30%;
+    margin-bottom: 20px;
+    color: white;
+}
+/* Estilos para os cards de assinatura */
+.subscription-page .subscription-card {
+    background-color: #1D1D1D;
+    border-radius: 15px;
+    padding: 50px;
+    width: 100%; /* Define a largura dos cards */
+    margin: 10px; /* Adiciona margem ao redor dos cards */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); /* Adiciona sombra ao card */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Estilos para o botão de alternância */
+.toggle-button-subscription {
+    background-color: transparent;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 20px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+/* Estilo para o botão de alternância quando passado o mouse */
+.toggle-button-subscription:hover {
+    background-color: #007bff;
+}
+/* Estilos para o interruptor de alternância */
+.toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 46px;
+    height: 20px;
+}
+
+/* Estilos para o campo de entrada do tipo "checkbox" */
+.toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* Estilos para o slider do interruptor */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+}
+
+/* Estilos para o slider quando o interruptor está ativado */
+.toggle-switch input:checked + .slider {
+    background-color: #1D1D1D;
+}
+
+/* Estilos para o controle deslizante do interruptor */
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 2px;
+    bottom: 2px;
+    background-color: #007bff;
+    transition: .4s;
+}
+
+/* Estilos para o controle deslizante quando o interruptor está ativado */
+.toggle-switch input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+/* Estilos para o controle deslizante quando o mouse passa sobre ele */
+.slider:hover:before {
+    box-shadow: 0 0 1px rgba(0,0,0,0.1);
 }

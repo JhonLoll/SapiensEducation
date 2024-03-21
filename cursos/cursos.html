@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <title>Sapiens Education</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        h1{
+            color: white;
+            font-size: 32px;
+            font-weight: bold;
+            margin: 10px;
+            margin-top: 20px;
+        }
+        h3{
+            color: #fff;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        span, p{
+            color: white;
+            padding: 10px;
+        }
+        .price{
+            font-size: 24px;
+            margin: 15px;
+            color: lightskyblue;
+        }
+        .price-button-curso{
+            color: white;
+            border: none;
+            background-color: #142D90;
+            padding: 10px;
+            margin-top: 20px;
+            border-radius: 15px;
+            cursor: pointer;
+        }
+        .toggle-prices-button{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        .price-button-curso a{
+            text-decoration: none;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="conteiner">
+        <header class="header">
+            <div>
+                <a href="../index.html"><img src="../imgs/logo-sapiens-education.png" alt="logo-sapiens-education" width="80px" height="80px"></a>
+            </div>
+            <div class="header-nav-desktop">
+                <a href="#">Sobre nós</a>
+                <div class="dropdown">
+                    <a href="#" class="dropdown-link">Cursos <i class="bi bi-caret-down-fill"></i></a>
+                    <div class="dropdown-content">
+                        <a href="#">ITA</a>
+                        <a href="#">ESA</a>
+                        <a href="#">IME</a>
+                    </div>
+                </div>
+                <a href="#">Professores</a>
+                <!-- Botões de Login e Cadastro -->
+                <button class="login-btn"><a href="signin.html">Entrar</a></button>
+                <button class="signup-btn"><a href="createacc.html">Cadastrar</a></button>
+            </div>
+            <span class="menu-toggle"><i class="bi bi-list"></i></span>
+        </header>
+        <main class="main">
+            <h1>Valores dos Cursos</h1>
+            <span>Escolha o curso que deseja e selecione a opção, anual ou mensal.</span>
+            <!-- Botão de alternância global -->
+            <div class="toggle-prices-button">
+                <p class="anual-price">Mensal</p>
+                <!-- Interruptor de alternância global -->
+                <label for="toggle-prices" class="toggle-switch">
+                    <input type="checkbox" id="toggle-prices">
+                    <span class="slider"></span>
+                </label>
+                <p class="month-price">Anual</p>
+            </div>
+            <p>x% de desconto no plano anual</p>
+            <div class="subscription-page">
+
+                <!-- Card de assinatura anual -->
+                <div class="subscription-card">
+                    <img src="../imgs/useful-imgs/picture-vector.png" alt="Imagem do Curso">
+                    <h3>Curso Preparatório - ITA</h3>
+                    <p class="price-ita price">R$99</p>
+                    <p><i class="bi bi-check-all"></i> Acesso a todos os cursos</p>
+                    <p><i class="bi bi-check-all"></i> Professores qualificados</p>
+                    <p><i class="bi bi-check-all"></i> Certificado de conclusão</p>
+                    <button class="price-button-curso"><a href="../payment/cart.html">Garanta sua vaga!</a></button>
+                </div>
+
+                <!-- Card de assinatura mensal -->
+                <div class="subscription-card">
+                    <img src="../imgs/useful-imgs/picture-vector.png" alt="Imagem do Curso">
+                    <h3>Curso Preparatório - ESA</h3>
+                    <p class="price-esa price">R$109</p>
+                    <p><i class="bi bi-check-all"></i> Acesso a todos os cursos</p>
+                    <p><i class="bi bi-check-all"></i> Professores qualificados</p>
+                    <p><i class="bi bi-check-all"></i> Certificado de conclusão</p>
+                    <button class="price-button-curso"><a href="../payment/cart.html">Garanta sua vaga!</a></button>
+                </div>
+
+                <!-- Card de assinatura semestral -->
+                <div class="subscription-card">
+                    <img src="../imgs/useful-imgs/picture-vector.png" alt="Imagem do Curso">
+                    <h3>Curso Preparatório - IME</h3>
+                    <p class="price-ime price">R$89</p>
+                    <p><i class="bi bi-check-all"></i> Acesso a todos os cursos</p>
+                    <p><i class="bi bi-check-all"></i> Professores qualificados</p>
+                    <p><i class="bi bi-check-all"></i> Certificado de conclusão</p>
+                    <button class="price-button-curso"><a href="../payment/cart.html">Garanta sua vaga!</a></button>
+                </div>
+            </div>
+        </main>
+        <footer class="footer">  
+            <div class="footer-content">
+                <p>&copy; Sapiens Education. Todos os direitos reservados</p>
+            </div>
+            <div class="icons-footer">
+                <i class="bi bi-facebook"></i>
+                <i class="bi bi-whatsapp"></i>
+                <i class="bi bi-twitter"></i>
+            </div>
+        </footer>
+    </div>
+    <script src="../script.js"></script>
+    <script>
+        // Seleciona o botão de alternância global
+        var toggleButton = document.getElementById('toggle-prices');
+        // Seleciona o botão de alternância global
+        var toggleButton = document.getElementById('toggle-prices');
+
+        // Adiciona um evento de clique ao botão
+        toggleButton.addEventListener('click', function() {
+        // Seleciona o ícone dentro do botão
+        var iconElement = this.querySelector('i');
+        
+        // Alterna as classes dos ícones
+        if (iconElement.classList.contains('icon-annual')) {
+            iconElement.classList.remove('icon-annual');
+            iconElement.classList.add('icon-monthly');
+            this.textContent = 'Anual';
+        } else {
+            iconElement.classList.remove('icon-monthly');
+            iconElement.classList.add('icon-annual');
+            this.textContent = 'Mensal';
+        }
+        });
+        // Adiciona um evento de clique ao botão
+        toggleButton.addEventListener('click', function() {
+            // Seleciona todos os elementos de preço
+            var priceEsa = document.querySelectorAll('.price-esa');
+            var priceIta = document.querySelectorAll('.price-ita');
+            var priceIme = document.querySelectorAll('.price-ime');
+            // Alterna o preço entre anual e mensal para todos os cards
+            priceEsa.forEach(function(priceElement) {
+                if (priceElement.textContent === 'R$1189') {
+                    priceElement.textContent = 'R$109';
+                } else {
+                    priceElement.textContent = 'R$1189';
+                }
+            });
+            priceIta.forEach(function(priceElement) {
+                if (priceElement.textContent === 'R$1069') {
+                    priceElement.textContent = 'R$99';
+                } else {
+                    priceElement.textContent = 'R$1069';
+                }
+            });
+            priceIme.forEach(function(priceElement) {
+                if (priceElement.textContent === 'R$949') {
+                    priceElement.textContent = 'R$89';
+                } else {
+                    priceElement.textContent = 'R$949';
+                }
+            });
+        });
+        // Seleciona o preço do card atual
+        //var priceElement = this.parentElement.querySelector('.price');
+
+        // Alterna o preço entre anual e mensal
+        //if (priceElement.textContent === '$99') {
+        //    priceElement.textContent = '$15';
+        //} else {
+        //    priceElement.textContent = '$99';
+        //}
+    </script>
+</body>
+</html>

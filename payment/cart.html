@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../imgs/logo-sapiens-education.png" type="image/x-icon">
+    <title>Sapiens Education</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        /* Estilos para a div .cart */
+        .cart {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            background-color: #1D1D1D;
+            border-radius: 25px;
+            color: white;
+        }
+        
+        /* Estilos para o contêiner de checkout */
+        .checkout-container {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 800px; /* Ajuste conforme necessário */
+        }
+        
+        /* Estilos para o formulário de pagamento */
+        .checkout-container form {
+            flex: 1;
+            margin-right: 20px; /* Espaço entre o formulário e as informações do produto */
+        }
+        
+        /* Estilos para as informações do produto */
+        .product-info {
+            flex: 1;
+        }
+        
+        /* Estilos para os grupos de formulário */
+        .cart .form-group {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 20px;
+        }
+        
+        /* Estilos para os rótulos dos campos do formulário */
+        .cart .form-group label {
+            margin-bottom: 5px;
+        }
+        
+        /* Estilos para os campos de entrada do formulário */
+        .cart .form-group input,
+        .cart .form-group select {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        
+        /* Estilos para o botão de envio do formulário */
+        .cart form button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        
+        /* Estilo para o botão de envio do formulário quando passado o mouse */
+        .cart form button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="conteiner">
+        <header class="header">
+            <div>
+                <a href="../index.html"><img src="../imgs/logo-sapiens-education.png" alt="logo-sapiens-education" width="80px" height="80px"></a>
+            </div>
+            <div class="header-nav-desktop">
+                <a href="#">Sobre nós</a>
+                <div class="dropdown">
+                    <a href="../cursos/cursos.html" class="dropdown-link">Cursos <i class="bi bi-caret-down-fill"></i></a>
+                    <div class="dropdown-content">
+                        <a href="#">ITA</a>
+                        <a href="#">ESA</a>
+                        <a href="#">IME</a>
+                    </div>
+                </div>
+                <a href="#">Professores</a>
+                <!-- Botões de Login e Cadastro -->
+                <button class="login-btn"><a href="../sign_in/signin.html">Entrar</a></button>
+                <button class="signup-btn"><a href="../sign_in/createacc.html">Cadastrar</a></button>
+            </div>
+            <span class="menu-toggle"><i class="bi bi-list"></i></span>
+        </header>
+        <main class="main">
+            <div class="cart">
+                <h2>Checkout</h2>
+                <div class="checkout-container">
+                    <form action="/submit-payment" method="post">
+                        <!-- Campos de formulário para todos os métodos de pagamento -->
+                        <div class="form-group">
+                            <label for="card-number">Número do Cartão:</label>
+                            <input type="text" id="card-number" name="card-number" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="card-name">Nome no Cartão:</label>
+                            <input type="text" id="card-name" name="card-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="card-expiry">Data de Validade:</label>
+                            <input type="text" id="card-expiry" name="card-expiry" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="card-cvv">CVV:</label>
+                            <input type="text" id="card-cvv" name="card-cvv" required>
+                        </div>
+
+                        <!-- Campos de formulário específicos para PayPal -->
+                        <div class="form-group paypal-fields" style="display: none;">
+                            <label for="paypal-email">Email do PayPal:</label>
+                            <input type="email" id="paypal-email" name="paypal-email">
+                        </div>
+
+                        <!-- Campos de formulário específicos para Transferência Bancária -->
+                        <div class="form-group bank-transfer-fields" style="display: none;">
+                            <label for="bank-account">Conta Bancária:</label>
+                            <input type="text" id="bank-account" name="bank-account">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="payment-method">Forma de Pagamento:</label>
+                            <select id="payment-method" name="payment-method" required>
+                                <option value="">Selecione uma forma de pagamento</option>
+                                <option value="credit-card">Cartão de Crédito</option>
+                                <option value="debit-card">Cartão de Débito</option>
+                                <option value="paypal">PayPal</option>
+                                <option value="bank-transfer">Transferência Bancária</option>
+                            </select>
+                        </div>
+                        <button type="submit">Finalizar Pagamento</button>
+                    </form>
+                    <div class="product-info">
+                        <h3>Produto: Nome do Produto</h3>
+                        <p>Preço: $99</p>
+                        <p>Quantidade: 1</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer class="footer">  
+            <div class="footer-content">
+                <p>&copy; Sapiens Education. Todos os direitos reservados</p>
+            </div>
+            <div class="icons-footer">
+                <i class="bi bi-facebook"></i>
+                <i class="bi bi-whatsapp"></i>
+                <i class="bi bi-twitter"></i>
+            </div>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+    <script>
+        // Seleciona o campo de seleção de forma de pagamento
+        var paymentMethodSelect = document.getElementById('payment-method');
+
+        // Função para atualizar o formulário de acordo com o método de pagamento escolhido
+        function updateForm() {
+            // Oculta todos os campos de formulário específicos
+            var paypalFields = document.querySelector('.paypal-fields');
+            var bankTransferFields = document.querySelector('.bank-transfer-fields');
+            paypalFields.style.display = 'none';
+            bankTransferFields.style.display = 'none';
+
+            // Mostra os campos de formulário específicos com base na seleção do usuário
+            if (paymentMethodSelect.value === 'paypal') {
+                paypalFields.style.display = 'block';
+            } else if (paymentMethodSelect.value === 'bank-transfer') {
+                bankTransferFields.style.display = 'block';
+            }
+        }
+
+        // Adiciona um evento de mudança ao campo de seleção
+        paymentMethodSelect.addEventListener('change', updateForm);
+
+        // Chama a função updateForm quando a página é carregada para garantir que o formulário esteja atualizado corretamente
+        updateForm();
+    </script>
+</body>
+</html>

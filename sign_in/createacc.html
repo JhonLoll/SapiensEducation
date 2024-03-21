@@ -5,10 +5,70 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style.css">
     <title>Sapiens Education</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 <body>
-    <div class="createacc-page">
-        <h1>CREATE ACCOUNT</h1>
+    <div class="conteiner">
+        <header class="header">
+            <div>
+                <a href="../index.html"><img src="../imgs/logo-sapiens-education.png" alt="logo-sapiens-education" width="80px" height="80px"></a>
+            </div>
+            <div class="header-nav-desktop">
+                <a href="#">Sobre nós</a>
+                <div class="dropdown">
+                    <a href="#" class="dropdown-link">Cursos <i class="bi bi-caret-down-fill"></i></a>
+                    <div class="dropdown-content">
+                        <a href="#">ITA</a>
+                        <a href="#">ESA</a>
+                        <a href="#">IME</a>
+                    </div>
+                </div>
+                <a href="#">Professores</a>
+                <!-- Botões de Login e Cadastro -->
+                <button class="login-btn"><a href="signin.html">Entrar</a></button>
+                <button class="signup-btn"><a href="createacc.html">Cadastrar</a></button>
+            </div>
+            <span class="menu-toggle"><i class="bi bi-list"></i></span>
+        </header>
+        <main class="main">
+            <div class="createacc-page">
+                <h2>Crie sua conta</h2>
+                <form action="/submit-account" method="post">
+                    <div class="form-group">
+                        <label for="name">Nome:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cpf">CPF:</label>
+                        <input type="text" id="cpf" name="cpf" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Senha:</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="confirm-password">Confirme sua senha:</label>
+                        <input type="password" id="confirm-password" name="confirm-password" required>
+                    </div>
+                    <button type="submit">Criar Conta</button>
+                </form>
+                <p>Já possui uma conta? <a href="signin.html">Entrar</a></p>
+            </div>
+        </main>
+        <footer class="footer">  
+            <div class="footer-content">
+                <p>&copy; Sapiens Education. Todos os direitos reservados</p>
+            </div>
+            <div class="icons-footer">
+                <i class="bi bi-facebook"></i>
+                <i class="bi bi-whatsapp"></i>
+                <i class="bi bi-twitter"></i>
+            </div>
+        </footer>
     </div>
     <script src="../script.js"></script>
 </body>
