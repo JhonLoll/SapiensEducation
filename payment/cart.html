@@ -37,6 +37,9 @@
         /* Estilos para as informações do produto */
         .product-info {
             flex: 1;
+            padding: 10px;
+            background-color: white;
+            color: black;
         }
         
         /* Estilos para os grupos de formulário */
@@ -74,6 +77,19 @@
         .cart form button:hover {
             background-color: #45a049;
         }
+
+        .cart h2{
+            font-weight: bold;
+            font-size: 26px;
+            margin-bottom: 25px;
+        }
+        .cart .product-info h3{
+            font-weight: bold;
+            font-size: 16px; 
+        }
+        .cart .product-info h3, p{
+            margin-bottom: 15px;
+        }
     </style>
 </head>
 <body>
@@ -101,7 +117,7 @@
         </header>
         <main class="main">
             <div class="cart">
-                <h2>Checkout</h2>
+                <h2>Pagamento</h2>
                 <div class="checkout-container">
                     <form action="/submit-payment" method="post">
                         <!-- Campos de formulário para todos os métodos de pagamento -->
@@ -148,7 +164,7 @@
                     </form>
                     <div class="product-info">
                         <h3>Produto: Nome do Produto</h3>
-                        <p>Preço: $99</p>
+                        <p>Preço: R$99</p>
                         <p>Quantidade: 1</p>
                     </div>
                 </div>

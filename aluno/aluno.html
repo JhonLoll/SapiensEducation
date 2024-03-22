@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <title>Sapiens Education</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <style>
+        /* Estilos Gerais */
+        .container {
+            display: flex;
+            min-height: 100vh;
+        }
+        
+        /* Barra Lateral */
+        .sidebar {
+            width: 180px;
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-right: 1px solid #dee2e6;
+        }
+        .center-information{
+            text-align: center;
+        }
+        .sidebar a{
+            text-decoration: none;
+        }
+        .sidebar a:hover{
+            font-weight: bold;
+            text-decoration: underline;
+        }
+        .sidebar h3{
+            font-weight: bold;
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+        .profile-info h4{
+            padding: 5px;
+        }
+        .edit-profile{
+            padding-top: 45px;
+        }
+        /* Conteúdo Central */
+        .main-content {
+            flex-grow: 1;
+            padding: 20px;
+            color: white;
+        }
+        .main-content h2{
+            font-weight: bold;
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+        /* Estilos para as Seções */
+        .student-profile, .courses-container, .performance-report {
+            margin-bottom: 20px;
+        }
+        .performance-report h3{
+            font-weight: bold;
+            font-size: 24px;
+        }
+        .courses-container .card:hover{
+            box-shadow: 0 5px 8px rgba(255, 255, 255, 0.25);
+            cursor: pointer;
+        }
+        /* Estilos para os Cards de Disciplinas */
+        .courses-container .card {
+            position: relative; /* Permite posicionar elementos filhos absolutamente dentro do card */
+            margin-bottom: 20px;
+            /*border: 1px solid #ccc;*/
+            border-radius: 5px;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+            background-color: #1D1D1D;
+        }
+        
+        .courses-container .card-title {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        
+        .courses-container .card-text {
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        
+        /* Estilo para a imagem com efeito de gradiente */
+        .courses-container .card-image {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%; /* Ajuste conforme necessário */
+            height: 100%;
+            overflow: hidden; /* Esconde a parte da imagem que excede o card */
+        }
+        
+        .courses-container .card-image img {
+            width: 50%;
+            height: 100%;
+            object-fit: cover; /* Garante que a imagem cubra todo o espaço disponível sem distorcer */
+        }
+        
+        /* Efeito de gradiente */
+        .courses-container .card-image::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(9, 5, 69, 1));
+        }
+        /* Estilos para os Gráficos de Desempenho */
+        .performance-charts {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .performance-charts h4{
+            font-weight: bold;
+            font-size: 16px;
+        }
+        .chart-container {
+            width: 30%;
+            text-align: center;
+        }
+        
+        .chart-container img {
+            width: 100%;
+            max-width: 300px;
+        }
+        .chart-container img:hover{
+            cursor: pointer;
+            box-shadow: 0 5px 8px rgba(255, 255, 255, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <div class="conteiner">
+        <header class="header">
+            <div>
+                <a href="../index.html"><img src="../imgs/logo-sapiens-education.png" alt="logo-sapiens-education" width="80px" height="80px"></a>
+            </div>
+            <div class="header-nav-desktop">
+                <a href="#">Sobre nós</a>
+                <div class="dropdown">
+                    <a href="#" class="dropdown-link">Cursos <i class="bi bi-caret-down-fill"></i></a>
+                    <div class="dropdown-content">
+                        <a href="#">ITA</a>
+                        <a href="#">ESA</a>
+                        <a href="#">IME</a>
+                    </div>
+                </div>
+                <a href="#">Professores</a>
+                <!-- Botões de Login e Cadastro -->
+                <button class="login-btn"><a href="signin.html">Entrar</a></button>
+                <button class="signup-btn"><a href="createacc.html">Cadastrar</a></button>
+            </div>
+            <span class="menu-toggle"><i class="bi bi-list"></i></span>
+        </header>
+        <main>
+                <div class="container">
+                    <!-- Barra Lateral (Navbar) -->
+                    <div class="sidebar">
+                        <h3>Informações da Conta</h3>
+                        <div class="profile-info">
+                            <div class="center-information">
+                                <img src="../imgs/useful-imgs/user.png" alt="Foto de Perfil" class="profile-picture" style="width: 100px;">
+                                <h4>Nome do Aluno</h4>
+                            </div>
+                            <h4>Endereço: rua de tal</h4>
+                            <h4>Idade: x anos</h4>
+                            <a href="#" class="edit-profile">Editar Perfil</a>
+                        </div>
+                    </div>
+            
+                    <!-- Conteúdo Central -->
+                    <div class="main-content">
+                        <!-- Disciplinas Inscritas -->
+                        <div class="courses-container">
+                            <h2>Disciplinas Inscritas</h2>
+                            <div class="row">
+                                <!-- Card de exemplo para uma disciplina -->
+                                <div class="col-md-4">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Curso Preparatório - ESA</h5>
+                                            <p class="card-text">
+                                                <strong>Duração:</strong> 12 semanas<br>
+                                                <strong>Código:</strong> ESA101<br>
+                                                <strong>Professor:</strong> João Silva<br>
+                                                <strong>Alunos Inscritos:</strong> 30
+                                            </p>
+                                        </div>
+                                        <!-- Imagem com efeito de gradiente -->
+                                        <div class="card-image">
+                                            <img src="../imgs/useful-imgs/esa-logo-removebg.png" alt="Imagem da Disciplina">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Curso Preparatório - ITA</h5>
+                                            <p class="card-text">
+                                                <strong>Duração:</strong> 12 semanas<br>
+                                                <strong>Código:</strong> ITA101<br>
+                                                <strong>Professor:</strong> João Silva<br>
+                                                <strong>Alunos Inscritos:</strong> 30
+                                            </p>
+                                        </div>
+                                        <!-- Imagem com efeito de gradiente -->
+                                        <div class="card-image">
+                                            <img src="../imgs/useful-imgs/ita-logo-removebg.png" alt="Imagem da Disciplina">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Curso Preparatório - IME</h5>
+                                            <p class="card-text">
+                                                <strong>Duração:</strong> 12 semanas<br>
+                                                <strong>Código:</strong> IME101<br>
+                                                <strong>Professor:</strong> João Silva<br>
+                                                <strong>Alunos Inscritos:</strong> 30
+                                            </p>
+                                        </div>
+                                        <!-- Imagem com efeito de gradiente -->
+                                        <div class="card-image">
+                                            <img src="../imgs/useful-imgs/ime-logo-removebg.png" alt="Imagem da Disciplina">
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
+                        <div class="performance-report">
+                            <h3>Relatório de Desempenho</h3>
+                            <div class="performance-charts">
+                                <div class="chart-container">
+                                    <h4>Curso Preparatório - IME</h4>
+                                    <img class="chart-image" src="https://image-charts.com/chart.js/2.8.0?bkg=white&c=%7B%20%22type%22%3A%20%22bar%22%2C%20%22data%22%3A%20%7B%20%22labels%22%3A%20%5B%20%22January%22%2C%20%22February%22%2C%20%22March%22%2C%20%22April%22%2C%20%22May%22%2C%20%22June%22%2C%20%22July%22%20%5D%2C%20%22datasets%22%3A%20%5B%20%7B%20%22label%22%3A%20%22Dataset%201%22%2C%20%22backgroundColor%22%3A%20%22rgba%28255%2C%2099%2C%20132%2C%200.5%29%22%2C%20%22borderColor%22%3A%20%22rgb%28255%2C%2099%2C%20132%29%22%2C%20%22borderWidth%22%3A%201%2C%20%22data%22%3A%20%5B%20-31%2C%20-70%2C%20-30%2C%20-33%2C%20-9%2C%2014%2C%20-41%20%5D%20%7D%2C%20%7B%20%22label%22%3A%20%22Dataset%202%22%2C%20%22backgroundColor%22%3A%20%22rgba%2854%2C%20162%2C%20235%2C%200.5%29%22%2C%20%22borderColor%22%3A%20%22rgb%2854%2C%20162%2C%20235%29%22%2C%20%22borderWidth%22%3A%201%2C%20%22data%22%3A%20%5B%2073%2C%2041%2C%2029%2C%2061%2C%20-65%2C%2059%2C%2038%20%5D%20%7D%20%5D%20%7D%2C%20%22options%22%3A%20%7B%20%22responsive%22%3A%20true%2C%20%22legend%22%3A%20%7B%20%22position%22%3A%20%22top%22%20%7D%2C%20%22title%22%3A%20%7B%20%22display%22%3A%20true%2C%20%22text%22%3A%20%22Chart.js%20Bar%20Chart%22%20%7D%20%7D%20%7D" alt="Static Chart"/>
+                                </div>
+                                <div class="chart-container">
+                                    <h4>Curso Preparatório - ESA</h4>
+                                    <img class="chart-image" src="https://image-charts.com/chart.js/2.8.0?bkg=white&c=%7B%20%22type%22%3A%20%22bar%22%2C%20%22data%22%3A%20%7B%20%22labels%22%3A%20%5B%20%22January%22%2C%20%22February%22%2C%20%22March%22%2C%20%22April%22%2C%20%22May%22%2C%20%22June%22%2C%20%22July%22%20%5D%2C%20%22datasets%22%3A%20%5B%20%7B%20%22label%22%3A%20%22Dataset%201%22%2C%20%22backgroundColor%22%3A%20%22rgba%28255%2C%2099%2C%20132%2C%200.5%29%22%2C%20%22borderColor%22%3A%20%22rgb%28255%2C%2099%2C%20132%29%22%2C%20%22borderWidth%22%3A%201%2C%20%22data%22%3A%20%5B%20-31%2C%20-70%2C%20-30%2C%20-33%2C%20-9%2C%2014%2C%20-41%20%5D%20%7D%2C%20%7B%20%22label%22%3A%20%22Dataset%202%22%2C%20%22backgroundColor%22%3A%20%22rgba%2854%2C%20162%2C%20235%2C%200.5%29%22%2C%20%22borderColor%22%3A%20%22rgb%2854%2C%20162%2C%20235%29%22%2C%20%22borderWidth%22%3A%201%2C%20%22data%22%3A%20%5B%2073%2C%2041%2C%2029%2C%2061%2C%20-65%2C%2059%2C%2038%20%5D%20%7D%20%5D%20%7D%2C%20%22options%22%3A%20%7B%20%22responsive%22%3A%20true%2C%20%22legend%22%3A%20%7B%20%22position%22%3A%20%22top%22%20%7D%2C%20%22title%22%3A%20%7B%20%22display%22%3A%20true%2C%20%22text%22%3A%20%22Chart.js%20Bar%20Chart%22%20%7D%20%7D%20%7D" alt="Static Chart"/>
+                                </div>
+                                <div class="chart-container">
+                                    <h4>Curso Preparatório - ITA</h4>
+                                    <img class="chart-image" src="https://image-charts.com/chart.js/2.8.0?bkg=white&c=%7B%20%22type%22%3A%20%22bar%22%2C%20%22data%22%3A%20%7B%20%22labels%22%3A%20%5B%20%22January%22%2C%20%22February%22%2C%20%22March%22%2C%20%22April%22%2C%20%22May%22%2C%20%22June%22%2C%20%22July%22%20%5D%2C%20%22datasets%22%3A%20%5B%20%7B%20%22label%22%3A%20%22Dataset%201%22%2C%20%22backgroundColor%22%3A%20%22rgba%28255%2C%2099%2C%20132%2C%200.5%29%22%2C%20%22borderColor%22%3A%20%22rgb%28255%2C%2099%2C%20132%29%22%2C%20%22borderWidth%22%3A%201%2C%20%22data%22%3A%20%5B%20-31%2C%20-70%2C%20-30%2C%20-33%2C%20-9%2C%2014%2C%20-41%20%5D%20%7D%2C%20%7B%20%22label%22%3A%20%22Dataset%202%22%2C%20%22backgroundColor%22%3A%20%22rgba%2854%2C%20162%2C%20235%2C%200.5%29%22%2C%20%22borderColor%22%3A%20%22rgb%2854%2C%20162%2C%20235%29%22%2C%20%22borderWidth%22%3A%201%2C%20%22data%22%3A%20%5B%2073%2C%2041%2C%2029%2C%2061%2C%20-65%2C%2059%2C%2038%20%5D%20%7D%20%5D%20%7D%2C%20%22options%22%3A%20%7B%20%22responsive%22%3A%20true%2C%20%22legend%22%3A%20%7B%20%22position%22%3A%20%22top%22%20%7D%2C%20%22title%22%3A%20%7B%20%22display%22%3A%20true%2C%20%22text%22%3A%20%22Chart.js%20Bar%20Chart%22%20%7D%20%7D%20%7D" alt="Static Chart"/>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+                <script src="../script.js"></script>
+        </main>
+        <footer class="footer">  
+            <div class="footer-content">
+                <p>&copy; Sapiens Education. Todos os direitos reservados</p>
+            </div>
+            <div class="icons-footer">
+                <i class="bi bi-facebook"></i>
+                <i class="bi bi-whatsapp"></i>
+                <i class="bi bi-twitter"></i>
+            </div>
+        </footer>
+    </div>
+    <script src="../script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Seleciona todas as imagens dentro do .performance-charts
+            var chartImages = document.querySelectorAll('.performance-charts .chart-image');
+        
+            // Adiciona um evento de clique a cada imagem
+            chartImages.forEach(function(image) {
+                image.addEventListener('click', function() {
+                    // Cria um elemento modal para exibir a imagem grande
+                    var modal = document.createElement('div');
+                    modal.style.position = 'fixed';
+                    modal.style.zIndex = '1000';
+                    modal.style.left = '0';
+                    modal.style.top = '0';
+                    modal.style.width = '100%';
+                    modal.style.height = '100%';
+                    modal.style.overflow = 'auto';
+                    modal.style.backgroundColor = 'rgba(0,0,0,0.4)';
+        
+                    // Cria um elemento de imagem para o modal
+                    var modalImg = document.createElement('img');
+                    modalImg.src = this.src;
+                    modalImg.style.margin = '15% auto';
+                    modalImg.style.display = 'block';
+                    modalImg.style.maxWidth = '80%';
+                    modalImg.style.maxHeight = '80%';
+        
+                    // Adiciona a imagem ao modal
+                    modal.appendChild(modalImg);
+        
+                    // Adiciona o modal ao corpo do documento
+                    document.body.appendChild(modal);
+        
+                    // Adiciona um evento de clique ao modal para fechá-lo
+                    modal.addEventListener('click', function() {
+                        this.parentNode.removeChild(this);
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>

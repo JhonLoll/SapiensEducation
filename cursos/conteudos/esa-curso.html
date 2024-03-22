@@ -3,12 +3,265 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../style.css">
-    <link rel="shortcut icon" href="../imgs/logo-sapiens-education.png" type="image/x-icon">
-
+    <link rel="shortcut icon" href="imgs/logo-sapiens-education.png" type="image/x-icon">
     <title>Sapiens Education</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>       
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 20px;
+        }
+        .container h1{
+            text-align: center;
+            padding: 20px;
+        }
+        .card {
+            border: none;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+            width: 600px;
+            text-align: center;
+        }
+        .card-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .card-text {
+            margin-bottom: 20px;
+        }
+        
+        .content-section {
+            margin-bottom: 20px;
+        }
+        .file-attachment {
+            margin-top: 10px;
+        }
+        
+        .forum-post {
+            margin-bottom: 20px;
+            /*border: 1px solid #ccc;*/
+            border-radius: 5px;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+        }
+        
+        
+        .forum-question {
+            margin-bottom: 20px;
+            padding: 10px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+        }
+        
+        
+        .forum-answer {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #e9ecef;
+            border-radius: 5px;
+        }
+        
+        
+        .forum-form {
+            margin-top: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+        }
+        
+        
+        .forum-form .form-group {
+            margin-bottom: 15px;
+        }
+        
+        
+        .forum-form .form-control {
+            border-radius: 5px;
+        }
+        
+        
+        .forum-form button[type="submit"] {
+            background-color: #007bff;
+            border-color: #007bff;
+            color: white;
+        }
+        /* Estilos para a Barra Lateral */
+        .sidebar {
+            position: fixed;
+            right: -300px; /* Inicialmente oculta a barra lateral */
+            top: 0;
+            width: 300px;
+            height: 100%;
+            background-color: #1D1D1D;
+            padding: 20px;
+            box-shadow: -2px 0 5px rgba(0, 0, 0, 0.15);
+            transition: right 0.3s ease;
+            overflow-y: auto;
+            color: white;
+        }
+        .sidebar h3{
+            margin-bottom: 25px;
+        }
+        .sidebar a{
+            color: white;
+        }
+        .sidebar a:hover{
+            text-decoration: underline;
+            font-weight: bold;
+        }
+        .sidebar.open {
+            right: 0; /* Mostra a barra lateral */
+        }
+        
+        .sidebar-content {
+            max-width: 250px;
+            margin: 0 auto;
+        }
+    </style>
 </head>
 <body>
-    <h1>ESA CURSO</h1>
+    <div class="conteiner">
+        <header class="header">
+            <div>
+                <a href="../../index.html"><img src="../../imgs/logo-sapiens-education.png" alt="logo-sapiens-education" width="80px" height="80px"></a>
+            </div>
+            <div class="header-nav-desktop">
+                <a href="#">Sobre nós</a>
+                <div class="dropdown">
+                    <a href="../cursos.html" class="dropdown-link">Cursos <i class="bi bi-caret-down-fill"></i></a>
+                    <div class="dropdown-content">
+                        <a href="#">ITA</a>
+                        <a href="esa-curso.html">ESA</a>
+                        <a href="#">IME</a>
+                    </div>
+                </div>
+                <a href="#">Professores</a>
+                <!-- Botões de Login e Cadastro -->
+                <button class="login-btn"><a href="../../sign_in/signin.html">Entrar</a></button>
+                <button class="signup-btn"><a href="../../sign_in/createacc.html">Cadastrar</a></button>
+            </div>
+            <span class="menu-toggle"><i class="bi bi-list"></i></span>
+        </header>
+        <main>
+            <div class="container">
+                <h1 class="my-4">Curso Preparatório para ESA</h1>
+        
+        
+                <!-- Seção de Vídeos -->
+                <div class="my-4">
+                    <h2>Vídeos</h2>
+                    <div class="row">
+                        <!-- Exemplo de Vídeo -->
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="embed-responsive embed-responsive-16by9">
+                                    <iframe class="embed-responsive-item" src="../../sample_video/SampleVideo.mp4" allowfullscreen></iframe>
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Título do Vídeo</h5>
+                                    <p class="card-text">Descrição do vídeo.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Repita o bloco acima para cada vídeo -->
+                    </div>
+                </div>
+        
+                <!-- Seção de Conteúdos a Serem Estudados -->
+                <div class="my-4">
+                    <h2>Conteúdos a Serem Estudados</h2>
+                    <div class="content-section">
+                        <!-- Exemplo de Conteúdo com Link e Arquivo Complementar -->
+                        <div class="content-item">
+                            <h4>Tópico 1</h4>
+                            <p>Descrição do tópico.</p>
+                            <a href="#" class="btn btn-primary">Acessar Conteúdo</a>
+                            <div class="file-attachment">
+                                <p>Arquivo Complementar:</p>
+                                <a href="#" id="openSidebar">Arquivo Complementar 1</a>
+                            </div>
+                        </div>
+                        <!-- Repita o bloco acima para cada tópico e arquivo complementar -->
+                </div>
+            
+                <!-- Barra Lateral -->
+                <div class="sidebar">
+                    <div class="sidebar-content">
+                        <h3>Conteúdos Complementares</h3>
+                        <ul>
+                            <li><a href="#"><i class="bi bi-file-play"></i> Conteúdo 1</a></li>
+                            <li><a href="#"><i class="bi bi-file-play"></i> Conteúdo 2</a></li>
+                            <li><a href="#"><i class="bi bi-file-play"></i> Conteúdo 3</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+
+                <!-- Seção do Fórum com Campo para Pergunta/Resposta -->
+                <div class="my-4">
+                    <h2>Fórum</h2>
+                    <div class="forum-post">
+                        <!-- Exemplo de Pergunta -->
+                        <div class="forum-question">
+                            <h4>Pergunta 1</h4>
+                            <p>Descrição da pergunta feita por um aluno.</p>
+                            <div class="forum-answer">
+                                <h5>Resposta</h5>
+                                <p>Descrição da resposta fornecida por outro aluno.</p>
+                            </div>
+                        </div>
+                        <!-- Repita o bloco acima para cada pergunta e resposta -->
+
+                        <!-- Campo para Inserir Pergunta ou Resposta -->
+                        <form class="forum-form">
+                            <div class="form-group">
+                                <label for="forumTitle">Título da Pergunta:</label>
+                                <input type="text" class="form-control" id="forumTitle" placeholder="Digite o título da sua pergunta">
+                            </div>
+                            <div class="form-group">
+                                <label for="forumQuestion">Pergunta:</label>
+                                <textarea class="form-control" id="forumQuestion" rows="3" placeholder="Digite sua pergunta aqui"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="forumAnswer">Resposta:</label>
+                                <textarea class="form-control" id="forumAnswer" rows="3" placeholder="Digite sua resposta aqui"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Enviar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>       
+        </main>
+        <footer class="footer">  
+            <div class="footer-content">
+                <p>&copy; Sapiens Education. Todos os direitos reservados</p>
+            </div>
+            <div class="icons-footer">
+                <i class="bi bi-facebook"></i>
+                <i class="bi bi-whatsapp"></i>
+                <i class="bi bi-twitter"></i>
+            </div>
+        </footer>
+    </div>
+    <script src="../../script.js"></script>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var openSidebarButton = document.getElementById('openSidebar');
+        var sidebar = document.querySelector('.sidebar');
+    
+        openSidebarButton.addEventListener('click', function(event) {
+            event.preventDefault();
+            sidebar.classList.toggle('open');
+        });
+    });
+    </script>
 </body>
 </html>
